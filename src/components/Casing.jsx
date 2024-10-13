@@ -1,19 +1,20 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid2';
-import EncounterComponent from './EncounterComponent';
-import NPCGenerator from './NPCGenerator';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid2";
+import EncounterComponent from "./EncounterComponent";
+import NPCGenerator from "./NPCGenerator";
+import TimerComponent from "./TimerComponent";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
+  backgroundColor: "#fff",
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: 'center',
+  textAlign: "center",
   color: theme.palette.text.secondary,
-  ...theme.applyStyles('dark', {
-    backgroundColor: '#1A2027',
+  ...theme.applyStyles("dark", {
+    backgroundColor: "#1A2027",
   }),
 }));
 
@@ -28,7 +29,7 @@ export default function BasicGrid() {
           <NPCGenerator />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <Item>size=8</Item>
+          <TimerComponent />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <Item>size=8</Item>
