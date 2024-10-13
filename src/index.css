@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: gray;
+  font-family: 'Montserrat', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.centerdiv {
+  display: flex;
+  text-align: center;
+  margin: 1px;
+  border-style: solid;
+  height: 100%;
+}
+
+.boxclass {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 2px;
+  padding: 2px;
+  border-style: solid;
+  height: 100%;
+  width: 100%;
+}
+
+.button {
+  width: 90%;
+  height: 90%;
+  font-size: 90%;
+}
+
+.resultDisplay {
+  padding: 5px;
+  width: 90%;
+  height: 90%;
+  text-align: left;
+  border-bottom: 2px solid #3F51B5;
+}
+
+.attributeDisplay {
+  padding: 5px;
+  width: 90%;
+  height: 90%;
+  text-align: left;
+}
+
+.cardClass {
+  padding: 10px;
+}
+
+.cardTitle {
+  background-color: black;
 }
