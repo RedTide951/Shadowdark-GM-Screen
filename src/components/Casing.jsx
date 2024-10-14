@@ -6,6 +6,8 @@ import Grid from "@mui/material/Grid2";
 import EncounterComponent from "./EncounterComponent";
 import NPCGenerator from "./NPCGenerator";
 import TimerComponent from "./TimerComponent";
+import TrapGenerator from "./TrapGenerator";
+import TreasureGenerator from "./TreasureGenerator";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -21,7 +23,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function BasicGrid() {
   return (
     <Box sx={{ flexGrow: 1 }} m={2}>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} rowSpacing={4}>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
           <EncounterComponent />
         </Grid>
@@ -32,7 +34,7 @@ export default function BasicGrid() {
           <TimerComponent />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <Item>size=8</Item>
+          <TreasureGenerator />
         </Grid>
       </Grid>
     </Box>

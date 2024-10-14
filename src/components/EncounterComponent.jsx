@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 
 function EncounterComponent() {
   const [encounterResult, setEncounterResult] = useState("");
