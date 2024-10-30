@@ -4,7 +4,9 @@ import Grid from "@mui/material/Grid2";
 
 function TimerComponent() {
   const [isActive, setIsActive] = useState(false);
-  const [time, setTime] = useState(60 * 60); // 60 minutes in seconds
+  const [time, setTime] = useState(60 * 60);
+
+  const [lightMishapResult, setlightMishapResult] = useState("");
 
   useEffect(() => {
     let interval = null;
@@ -41,19 +43,43 @@ function TimerComponent() {
 
   const radius = 60;
   const circumference = 2 * Math.PI * radius;
-  const offset = ((60 * 60 - time) / (60 * 60)) * circumference;
+
+  const handleLightMishap = () => {
+    const lightSourceEffects = [
+      "Dud. The light source (even a magical one) goes out and needs to be replaced or recast.",
+      "Fire. The light source (even a magical one) flares and burns your hand. Take 1 damage. DC 18 DEX or drop it.",
+      "Air. A rogue wind or pocket of thin air blows through. DC 15 DEX or the flames go out.",
+      "Water. A sudden rain shower or dripping ceiling hits the light source. DC 15 DEX or the flames go out.",
+      "Earth. Falling rocks, mud, leaves, or ash cover the light source. DC 12 DEX to protect it.",
+      "Spark. If the light source is open flame, it sparks and catches on 1d4 flammable objects within close. DC 12 DEX to extinguish each one.",
+    ];
+
+    const roll = Math.floor(Math.random() * 6);
+
+    setlightMishapResult(lightSourceEffects[roll]);
+    return;
+  };
 
   return (
     <Card className="cardClass">
-      <Grid
-        container
-        spacing={1}
-        justifyContent="space-between"
-        style={{ height: "100%" }}
-      >
+      <Grid container spacing={2}>
         <Grid size={12}>
           <Typography variant="h4" className="cardTitle">
-            TIMER
+            LIGHT
+          </Typography>
+        </Grid>
+        <Grid size={3}>
+          <Button
+            variant="contained"
+            className="button"
+            onClick={handleLightMishap}
+          >
+            Mishap!
+          </Button>
+        </Grid>
+        <Grid size={9} sx={{ minHeight: "5em" }}>
+          <Typography className="resultDisplay">
+            {lightMishapResult ? `${lightMishapResult}` : ""}
           </Typography>
         </Grid>
         <Grid size={12}>
@@ -61,7 +87,8 @@ function TimerComponent() {
             sx={{
               position: "relative",
               width: "100%",
-              height: "30px",
+              height: "100%",
+              minHeight: "40px",
               backgroundColor: "lightgray",
               borderRadius: "5px",
               overflow: "hidden",
@@ -74,18 +101,19 @@ function TimerComponent() {
                 left: 0,
                 height: "100%",
                 width: `${(time / (60 * 60)) * 100}%`,
-                backgroundColor: "#3f51b5",
+                backgroundColor: "green",
                 transition: "width 1s linear",
               }}
             />
             <Typography
-              variant="body1"
+              variant="h5"
               sx={{
                 position: "absolute",
                 width: "100%",
                 textAlign: "center",
-                lineHeight: "30px",
-                color: "white",
+                lineHeight: "180%",
+                color: "black",
+                fontWeight: "bold",
               }}
             >
               {Math.floor(time / 60)}:

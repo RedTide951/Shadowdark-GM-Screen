@@ -186,13 +186,7 @@ function NPCGenerator() {
 
   return (
     <Card className="cardClass">
-      <Grid
-        container
-        spacing={2}
-        justifyContent="space-between"
-        alignItems="center"
-        style={{ height: "100%" }}
-      >
+      <Grid container spacing={2} alignItems="center">
         <Grid size={12}>
           <Typography variant="h4" className="cardTitle">
             RANDOM NPC
@@ -200,82 +194,49 @@ function NPCGenerator() {
         </Grid>
 
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Name
-          </Typography>
+          <Typography className="attributeDisplay">Name</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.name}
-          </Typography>
+          <Typography className="resultDisplay">{npc.name}</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Ancestry
-          </Typography>
+          <Typography className="attributeDisplay">Ancestry</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.ancestry}
-          </Typography>
+          <Typography className="resultDisplay">{npc.ancestry}</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Alignment
-          </Typography>
+          <Typography className="attributeDisplay">Alignment</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.alignment}
-          </Typography>
+          <Typography className="resultDisplay">{npc.alignment}</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Age
-          </Typography>
+          <Typography className="attributeDisplay">Age</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.age}
-          </Typography>
+          <Typography className="resultDisplay">{npc.age}</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Wealth
-          </Typography>
+          <Typography className="attributeDisplay">Wealth</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.wealth}
-          </Typography>
+          <Typography className="resultDisplay">{npc.wealth}</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Appearance
-          </Typography>
+          <Typography className="attributeDisplay">Appearance</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.appearance}
-          </Typography>
+          <Typography className="resultDisplay">{npc.appearance}</Typography>
         </Grid>
         <Grid size={3}>
-          <Typography className="attributeDisplay" variant="result">
-            Secret
-          </Typography>
+          <Typography className="attributeDisplay">Secret</Typography>
         </Grid>
         <Grid size={9}>
-          <Typography className="resultDisplay" variant="result">
-            {npc.secret}
-          </Typography>
+          <Typography className="resultDisplay">{npc.secret}</Typography>
         </Grid>
         <Grid size={12}>
-          <Button
-            variant="contained"
-            className="button"
-            onClick={generateNPC}
-            style={{ width: "100%" }}
-          >
+          <Button variant="contained" className="button" onClick={generateNPC}>
             Generate
           </Button>
         </Grid>

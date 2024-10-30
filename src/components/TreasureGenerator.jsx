@@ -7,6 +7,8 @@ import Card from "@mui/material/Card";
 const TreasureGenerator = () => {
   const [zeroTreasureResult, setzeroTreasureResult] = useState(null);
   const [fourTreasureResult, setfourTreasureResult] = useState(null);
+  const [sevenTreasureResult, setsevenTreasureResult] = useState(null);
+  const [tenTreasureResult, settenTreasureResult] = useState(null);
 
   const handleZeroThreeTreasure = () => {
     const roll = Math.ceil(Math.random() * 100);
@@ -430,6 +432,484 @@ const TreasureGenerator = () => {
     }
   };
 
+  const handleSevenNineTreasure = () => {
+    const roll = Math.ceil(Math.random() * 100);
+
+    const sevenNineTreasureList = [
+      { range: "01", description: "Broken glass shards", value: "2 cp" },
+      { range: "02-03", description: "Pair of muddy boots", value: "5 sp" },
+      {
+        range: "04-05",
+        description: "Rotting, leather pouch with 12 sp",
+        value: "12 sp",
+      },
+      {
+        range: "06-07",
+        description: "Greatsword made of blue steel",
+        value: "15 gp",
+      },
+      {
+        range: "08-09",
+        description: "Tall, thin mirror in a bronze frame",
+        value: "20 gp",
+      },
+      {
+        range: "10-11",
+        description: "Pair of bastard swords with griffon pommels",
+        value: "20 gp",
+      },
+      {
+        range: "12-13",
+        description: "Silver-and-gold statuette of an elf archer",
+        value: "25 gp",
+      },
+      { range: "14-15", description: "Taxidermied smilodon", value: "30 gp" },
+      {
+        range: "16-17",
+        description: "Cameo necklace of a human's profile",
+        value: "30 gp",
+      },
+      {
+        range: "18-19",
+        description: "Ivory horn mug carved with drinking dwarves",
+        value: "35 gp",
+      },
+      {
+        range: "20-21",
+        description: "Ironwood longbow engraved with silver leaves",
+        value: "35 gp",
+      },
+      {
+        range: "22-23",
+        description: "Mahogany chess board with silver pieces",
+        value: "40 gp",
+      },
+      {
+        range: "24-25",
+        description: "Mithral shield polished to a mirror-shine",
+        value: "45 gp",
+      },
+      {
+        range: "26-27",
+        description: "Iridescent, spiralled unicorn horn",
+        value: "50 gp",
+      },
+      {
+        range: "28-29",
+        description: "Basilisk egg in a silk bag",
+        value: "55 gp",
+      },
+      {
+        range: "30-31",
+        description: "Gold holy symbol of Madeera with a large pearl",
+        value: "60 gp",
+      },
+      {
+        range: "32-33",
+        description: "Red dragon mask with gold filigree",
+        value: "65 gp",
+      },
+      {
+        range: "34-35",
+        description: "Gold censer with hooded, skeletal figures",
+        value: "70 gp",
+      },
+      {
+        range: "36-37",
+        description: "Large, marble statue of an armored angel",
+        value: "70 gp",
+      },
+      {
+        range: "38-39",
+        description: "Chainmail with several rows of gold links",
+        value: "75 gp",
+      },
+      {
+        range: "40-41",
+        description: "Clutch of three green cockatrice eggs",
+        value: "25 gp each",
+      },
+      {
+        range: "42-43",
+        description: "Oak lockbox filled to the brim with 80 gp",
+        value: "80 gp",
+      },
+      {
+        range: "44-45",
+        description: "Blue silk robe embroidered with silver moons",
+        value: "80 gp",
+      },
+      { range: "46-47", description: "Radiant giant pearl", value: "80 gp" },
+      {
+        range: "48-49",
+        description: "Lantern made of intricate stained glass",
+        value: "80 gp",
+      },
+      {
+        range: "50-53",
+        description: "Life-sized, jointed python of polished gold",
+        value: "80 gp",
+      },
+      {
+        range: "54-55",
+        description: "Oil painting of a famous bard",
+        value: "85 gp",
+      },
+      {
+        range: "56-57",
+        description: "Chunk of meteorite sculpted into a tentacled idol",
+        value: "85 gp",
+      },
+      {
+        range: "58-59",
+        description: "Black silk surcoat embroidered with a gold lion",
+        value: "90 gp",
+      },
+      {
+        range: "60-61",
+        description: "Pair of lustrous pearls in a silver lockbox",
+        value: "90 gp",
+      },
+      {
+        range: "62-63",
+        description: "Gilded helm plumed with roc feathers",
+        value: "95 gp",
+      },
+      {
+        range: "64-65",
+        description: "Hand-drawn bestiary of rare creatures",
+        value: "95 gp",
+      },
+      {
+        range: "66-67",
+        description: "Wyvern hatchling encased in amber",
+        value: "110 gp",
+      },
+      {
+        range: "68-69",
+        description: "Pendant with three lambent pearls",
+        value: "120 gp",
+      },
+      {
+        range: "70-71",
+        description: "Life-sized, obsidian statue of a galloping horse",
+        value: "120 gp",
+      },
+      {
+        range: "72-73",
+        description: "Glittering, faceted emerald",
+        value: "120 gp",
+      },
+      { range: "74-75", description: "Potion of Healing", value: "150 gp" },
+      { range: "76-77", description: "Potion of Polymorph", value: "200 gp" },
+      {
+        range: "78-79",
+        description: "Magic wand, 3rd-tier spell",
+        value: "250 gp",
+      },
+      { range: "80-81", description: "4th-tier spell scroll", value: "260 gp" },
+      { range: "82-83", description: "Crystal Ball", value: "260 gp" },
+      {
+        range: "84-85",
+        description: "Magic wand, 4th-tier spell (flaw)",
+        value: "300 gp",
+      },
+      { range: "86-87", description: "Immovable Rod", value: "300 gp" },
+      {
+        range: "88-89",
+        description: "+2 magic armor (benefit)",
+        value: "300 gp",
+      },
+      {
+        range: "90-91",
+        description: "+2 mithral magic armor (benefit, virtue)",
+        value: "320 gp",
+      },
+      {
+        range: "92-93",
+        description: "Scorpion idol, one Death's Sting blessing",
+        value: "320 gp",
+      },
+      {
+        range: "94-95",
+        description: "Necromancy circle, one Ghostwalk blessing",
+        value: "350 gp",
+      },
+      {
+        range: "96-97",
+        description: "Owl statue, one Arcane Eye blessing",
+        value: "350 gp",
+      },
+      {
+        range: "98-99",
+        description: "+2 magic weapon (benefit, flaw)",
+        value: "500 gp",
+      },
+      {
+        range: "00",
+        description: "+3 magic weapon (benefit, virtue)",
+        value: "900 gp",
+      },
+    ];
+
+    for (const item of sevenNineTreasureList) {
+      const rangeParts = item.range.split("-");
+      const start = parseInt(rangeParts[0], 10);
+      const end = rangeParts.length === 2 ? parseInt(rangeParts[1], 10) : start;
+      if (roll >= start && roll <= end) {
+        setsevenTreasureResult(item);
+        return;
+      }
+    }
+  };
+
+  const handleTenPlusTreasure = () => {
+    const roll = Math.ceil(Math.random() * 100);
+
+    const tenPlusTreasureList = [
+      {
+        range: "01",
+        description: "Three tarnished silver plates",
+        value: "5 sp each",
+      },
+      {
+        range: "02-03",
+        description: "Soapstone statuette of Gede with crumbled head",
+        value: "3 gp",
+      },
+      {
+        range: "04-05",
+        description: "Half-empty cask of dwarvish honey mead",
+        value: "5 gp",
+      },
+      {
+        range: "06-07",
+        description: "Damaged chainmail in need of repair",
+        value: "50 gp",
+      },
+      {
+        range: "08-09",
+        description: "Five matching, ceremonial greatswords",
+        value: "12 gp each",
+      },
+      {
+        range: "10-11",
+        description: "Chipped emerald worth half its value",
+        value: "60 gp",
+      },
+      {
+        range: "12-13",
+        description: "Gold ring with a large, black pearl",
+        value: "65 gp",
+      },
+      {
+        range: "14-15",
+        description: "Suit of crimson chainmail with matching shield",
+        value: "70 gp",
+      },
+      {
+        range: "16-17",
+        description: "Giant pearl in the mouth of a gold-dipped bat",
+        value: "100 gp",
+      },
+      {
+        range: "18-19",
+        description: "Stained glass pane of St. Terragnis vs. a dragon",
+        value: "110 gp",
+      },
+      {
+        range: "20-21",
+        description: "Marble throne with giant pearl in headrest",
+        value: "115 gp",
+      },
+      {
+        range: "22-23",
+        description: "Dagger with emerald in the pommel",
+        value: "120 gp",
+      },
+      {
+        range: "24-25",
+        description: "A trio of pearls with blue and violet hues",
+        value: "40 gp each",
+      },
+      {
+        range: "26-27",
+        description: "Suit of plate mail shaped to look like a minotaur",
+        value: "130 gp",
+      },
+      {
+        range: "28-29",
+        description: "Suit of blue plate mail with crashing wave motif",
+        value: "130 gp",
+      },
+      {
+        range: "30-31",
+        description: "Jade sculpture of a meditating elephant-man",
+        value: "140 gp",
+      },
+      {
+        range: "32-33",
+        description: "Masterwork lute by realm's most famous luthier",
+        value: "140 gp",
+      },
+      {
+        range: "34-35",
+        description: "Dragonbone greataxe with a ruby in pommel",
+        value: "220 gp",
+      },
+      {
+        range: "36-37",
+        description: "Gold scarab dotted with miniature emeralds",
+        value: "220 gp",
+      },
+      {
+        range: "38-39",
+        description: "Chest brimming with 230 gp",
+        value: "230 gp",
+      },
+      {
+        range: "40-41",
+        description: "Silvered staff tipped with a ruby held in a claw",
+        value: "220 gp",
+      },
+      {
+        range: "42-43",
+        description: "Only existing painting of an ancient king",
+        value: "240 gp",
+      },
+      {
+        range: "44-45",
+        description: "Gold pendant bearing a teardrop-cut ruby",
+        value: "240 gp",
+      },
+      {
+        range: "46-47",
+        description: "Giant, egg-shaped emerald",
+        value: "240 gp",
+      },
+      {
+        range: "48-49",
+        description: "Silk robe with four pearls as buttons",
+        value: "240 gp",
+      },
+      {
+        range: "50-53",
+        description: "Silver skull with a ruby in the eye",
+        value: "240 gp",
+      },
+      {
+        range: "54-55",
+        description: "Mithral suit of elvish chainmail",
+        value: "240 gp",
+      },
+      {
+        range: "56-57",
+        description: "Opalized giant conch shell with silver inlay",
+        value: "250 gp",
+      },
+      {
+        range: "58-59",
+        description: "Gold sarcophagus inscribed with lost language",
+        value: "250 gp",
+      },
+      {
+        range: "60-61",
+        description: "Chunk of meteorite wrapped around a ruby",
+        value: "250 gp",
+      },
+      { range: "62-63", description: "4th-tier spell scroll", value: "260 gp" },
+      {
+        range: "64-65",
+        description: "Velvet bag holding a lustrous sapphire",
+        value: "280 gp",
+      },
+      { range: "66-67", description: "2 Potions of Healing", value: "300 gp" },
+      {
+        range: "68-69",
+        description: "Silver torc with a sapphire and two pearls",
+        value: "360 gp",
+      },
+      {
+        range: "70-71",
+        description: "Flawless, dazzling diamond",
+        value: "360 gp",
+      },
+      {
+        range: "72-73",
+        description: "Taxidermied adult dragon",
+        value: "360 gp",
+      },
+      { range: "74-75", description: "5th-tier spell scroll", value: "360 gp" },
+      { range: "76-77", description: "Potion of Extirpation", value: "360 gp" },
+      {
+        range: "78-79",
+        description: "Magic wand, 5th-tier spell (virtue, flaw)",
+        value: "360 gp",
+      },
+      {
+        range: "80-81",
+        description: "Giant diamond, casts wish once without fail",
+        value: "720 gp",
+      },
+      { range: "82-83", description: "Portable Hole", value: "720 gp" },
+      {
+        range: "84-85",
+        description: "Ruby-eyed, gold idol, 3 Demonskin blessings",
+        value: "840 gp",
+      },
+      {
+        range: "86-87",
+        description: "Scroll of the Covenant, 3 Divine Halo blessings",
+        value: "840 gp",
+      },
+      {
+        range: "88-89",
+        description: "Brak's Cube of Perfection",
+        value: "840 gp",
+      },
+      {
+        range: "90-91",
+        description: "Richly woven Flying Carpet",
+        value: "840 gp",
+      },
+      {
+        range: "92-93",
+        description: "+3 mithral magic armor (benefit, virtue)",
+        value: "900 gp",
+      },
+      {
+        range: "94-95",
+        description: "+3 magic weapon (2 benefits)",
+        value: "900 gp",
+      },
+      {
+        range: "96-97",
+        description: "The fearsome Obsidian Witchknife",
+        value: "1,200 gp",
+      },
+      {
+        range: "98-99",
+        description: "The hallowed Armor of Saint Terragnis",
+        value: "1,200 gp",
+      },
+      {
+        range: "00",
+        description: "The mighty Staff of Ord",
+        value: "1,200 gp",
+      },
+    ];
+
+    for (const item of tenPlusTreasureList) {
+      const rangeParts = item.range.split("-");
+      const start = parseInt(rangeParts[0], 10);
+      const end = rangeParts.length === 2 ? parseInt(rangeParts[1], 10) : start;
+      if (roll >= start && roll <= end) {
+        settenTreasureResult(item);
+        return;
+      }
+    }
+  };
+
   return (
     <Card className="cardClass">
       <Grid
@@ -469,6 +949,34 @@ const TreasureGenerator = () => {
           <Typography className="resultDisplay" variant="result">
             {fourTreasureResult
               ? `${fourTreasureResult.description} (${fourTreasureResult.value})`
+              : ""}
+          </Typography>
+        </Grid>
+        <Grid size={4}>
+          <Button
+            variant="contained"
+            onClick={handleSevenNineTreasure}
+            fullWidth
+          >
+            7-9 Treasures
+          </Button>
+        </Grid>
+        <Grid size={8}>
+          <Typography className="resultDisplay" variant="result">
+            {sevenTreasureResult
+              ? `${sevenTreasureResult.description} (${sevenTreasureResult.value})`
+              : ""}
+          </Typography>
+        </Grid>
+        <Grid size={4}>
+          <Button variant="contained" onClick={handleTenPlusTreasure} fullWidth>
+            10+ Treasures
+          </Button>
+        </Grid>
+        <Grid size={8}>
+          <Typography className="resultDisplay" variant="result">
+            {tenTreasureResult
+              ? `${tenTreasureResult.description} (${tenTreasureResult.value})`
               : ""}
           </Typography>
         </Grid>

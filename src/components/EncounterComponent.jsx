@@ -20,20 +20,21 @@ function EncounterComponent() {
   const handleEncounterCheck = () => {
     const roll = Math.ceil(Math.random() * 6);
     if (roll === 1) {
-      setEncounterResult(`(${roll}) Encounter!`);
+      setEncounterResult(` Encounter! (${roll})`);
     } else {
-      setEncounterResult(`(${roll}) You are safe for now...`);
+      setEncounterResult(`You are safe for now... (${roll}) `);
     }
   };
 
   const handleDistanceCheck = () => {
     const roll = Math.ceil(Math.random() * 6);
     const distances = ["Close", "Near", "Near", "Near", "Far", "Far"];
-    setStartingDistance(`(${roll}) ${distances[roll - 1]}`);
+    setStartingDistance(` ${distances[roll - 1]} (${roll})`);
   };
 
   const handleActivityCheck = () => {
-    const roll = Math.ceil(Math.random() * 6) + Math.ceil(Math.random() * 6);
+    const roll1 = Math.ceil(Math.random() * 6);
+    const roll2 = Math.ceil(Math.random() * 6);
     const activities = [
       "Hunting",
       "Hunting",
@@ -46,7 +47,7 @@ function EncounterComponent() {
       "Guarding",
       "Sleeping",
     ];
-    setActivity(`(${roll}) ${activities[roll - 2]}`);
+    setActivity(` ${activities[roll1 + roll2 - 2]} (${roll1} + ${roll2})`);
   };
 
   const handleReactionCheck = () => {
@@ -59,7 +60,7 @@ function EncounterComponent() {
     else if (total <= 11) attitude = "Curious";
     else attitude = "Friendly";
 
-    setReaction(`(${roll}+${chaMod}) ${attitude}`);
+    setReaction(` ${attitude} (${roll} + ${chaMod})`);
   };
 
   const handleCHAChange = (event) => {
@@ -68,51 +69,40 @@ function EncounterComponent() {
 
   return (
     <Card className="cardClass">
-      <Grid
-        container
-        spacing={1}
-        justifyContent="space-between"
-        alignItems="center"
-        style={{ height: "100%" }}
-      >
+      <Grid container spacing={2} alignItems="center">
         <Grid size={12}>
           <Typography variant="h4" className="cardTitle">
             ENCOUNTERS
           </Typography>
         </Grid>
-        <Grid size={6}>
+        <Grid size={4}>
           <Button
             variant="contained"
             onClick={handleEncounterCheck}
             className="button"
-            style={{ width: "100%" }}
           >
             Encounter
           </Button>
         </Grid>
-        <Grid size={6}>
-          <Typography className="resultDisplay" variant="result">
-            {encounterResult}
-          </Typography>
+        <Grid size={8}>
+          <Typography className="resultDisplay">{encounterResult}</Typography>
         </Grid>
 
-        <Grid size={6}>
+        <Grid size={4}>
           <Button
             variant="contained"
             onClick={handleDistanceCheck}
             className="button"
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "100%" }}
           >
             Distance
           </Button>
         </Grid>
-        <Grid size={6}>
-          <Typography className="resultDisplay" variant="result">
-            {startingDistance}
-          </Typography>
+        <Grid size={8}>
+          <Typography className="resultDisplay">{startingDistance}</Typography>
         </Grid>
 
-        <Grid size={6}>
+        <Grid size={4}>
           <Button
             variant="contained"
             onClick={handleActivityCheck}
@@ -122,17 +112,16 @@ function EncounterComponent() {
             Activity
           </Button>
         </Grid>
-        <Grid size={6}>
-          <Typography className="resultDisplay" variant="result">
-            {activity}
-          </Typography>
+        <Grid size={8}>
+          <div>
+            <Typography className="resultDisplay">{activity}</Typography>
+          </div>
         </Grid>
         <Grid size={4}>
           <Button
             variant="contained"
             onClick={handleReactionCheck}
             className="button"
-            style={{ width: "100%" }}
           >
             Reaction
           </Button>
@@ -154,9 +143,7 @@ function EncounterComponent() {
           </FormControl>
         </Grid>
         <Grid size={6}>
-          <Typography className="resultDisplay" variant="result">
-            {reaction}
-          </Typography>
+          <Typography className="resultDisplay">{reaction}</Typography>
         </Grid>
       </Grid>
     </Card>

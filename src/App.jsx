@@ -17,12 +17,8 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: "montserrat",
-    result: {
-      fontSize: "1rem",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "flex-start",
-      height: "1rem",
+    allVariants: {
+      textAlign: "left",
     },
   },
   card: {
