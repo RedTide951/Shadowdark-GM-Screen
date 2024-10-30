@@ -2,6 +2,8 @@ import { AlignHorizontalLeft } from "@mui/icons-material";
 import "./App.css";
 import Casing from "./components/Casing";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Typography from "@mui/material/Typography";
 
 const theme = createTheme({
   palette: {
@@ -20,7 +22,7 @@ const theme = createTheme({
       display: "flex",
       alignItems: "center",
       justifyContent: "flex-start",
-      height: "1.5rem",
+      height: "1rem",
     },
   },
   card: {
@@ -33,6 +35,20 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
+        <AppBar position="static">
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              textAlign: "left",
+              padding: "5px",
+              paddingLeft: "10px",
+            }}
+          >
+            Shadowdark GM Screen
+          </Typography>
+        </AppBar>
         <Casing />
       </div>
     </ThemeProvider>

@@ -186,9 +186,17 @@ function NPCGenerator() {
 
   return (
     <Card className="cardClass">
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={2}
+        justifyContent="space-between"
+        alignItems="center"
+        style={{ height: "100%" }}
+      >
         <Grid size={12}>
-          <Typography variant="h4">RANDOM NPC</Typography>
+          <Typography variant="h4" className="cardTitle">
+            RANDOM NPC
+          </Typography>
         </Grid>
 
         <Grid size={3}>
@@ -262,7 +270,12 @@ function NPCGenerator() {
           </Typography>
         </Grid>
         <Grid size={12}>
-          <Button variant="contained" className="button" onClick={generateNPC}>
+          <Button
+            variant="contained"
+            className="button"
+            onClick={generateNPC}
+            style={{ width: "100%" }}
+          >
             Generate
           </Button>
         </Grid>

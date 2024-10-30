@@ -52,34 +52,46 @@ function TimerComponent() {
         style={{ height: "100%" }}
       >
         <Grid size={12}>
-          <Typography variant="h4">TIMER</Typography>
+          <Typography variant="h4" className="cardTitle">
+            TIMER
+          </Typography>
         </Grid>
         <Grid size={12}>
-          <svg width="150" height="150">
-            <circle
-              stroke="lightgray"
-              fill="transparent"
-              strokeWidth="10"
-              cx="75"
-              cy="75"
-              r={radius}
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              height: "30px",
+              backgroundColor: "lightgray",
+              borderRadius: "5px",
+              overflow: "hidden",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                height: "100%",
+                width: `${(time / (60 * 60)) * 100}%`,
+                backgroundColor: "#3f51b5",
+                transition: "width 1s linear",
+              }}
             />
-            <circle
-              stroke="#3f51b5"
-              fill="transparent"
-              strokeWidth="10"
-              cx="75"
-              cy="75"
-              r={radius}
-              strokeDasharray={circumference}
-              strokeDashoffset={offset}
-              transform="rotate(-90 75 75)"
-            />
-            <text x="50%" y="50%" dy=".3em" textAnchor="middle" fill="white">
+            <Typography
+              variant="body1"
+              sx={{
+                position: "absolute",
+                width: "100%",
+                textAlign: "center",
+                lineHeight: "30px",
+                color: "white",
+              }}
+            >
               {Math.floor(time / 60)}:
               {time % 60 < 10 ? `0${time % 60}` : time % 60}
-            </text>
-          </svg>
+            </Typography>
+          </Box>
         </Grid>
         <Grid size={2}>
           <Button

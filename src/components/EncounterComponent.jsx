@@ -72,16 +72,20 @@ function EncounterComponent() {
         container
         spacing={1}
         justifyContent="space-between"
+        alignItems="center"
         style={{ height: "100%" }}
       >
         <Grid size={12}>
-          <Typography variant="h4">ENCOUNTERS</Typography>
+          <Typography variant="h4" className="cardTitle">
+            ENCOUNTERS
+          </Typography>
         </Grid>
         <Grid size={6}>
           <Button
             variant="contained"
             onClick={handleEncounterCheck}
             className="button"
+            style={{ width: "100%" }}
           >
             Encounter
           </Button>
@@ -97,6 +101,7 @@ function EncounterComponent() {
             variant="contained"
             onClick={handleDistanceCheck}
             className="button"
+            style={{ width: "100%" }}
           >
             Distance
           </Button>
@@ -112,6 +117,7 @@ function EncounterComponent() {
             variant="contained"
             onClick={handleActivityCheck}
             className="button"
+            style={{ width: "100%" }}
           >
             Activity
           </Button>
@@ -126,13 +132,19 @@ function EncounterComponent() {
             variant="contained"
             onClick={handleReactionCheck}
             className="button"
+            style={{ width: "100%" }}
           >
             Reaction
           </Button>
         </Grid>
         <Grid size={2}>
           <FormControl className="button">
-            <Select value={chaMod} onChange={handleCHAChange} displayEmpty>
+            <Select
+              value={chaMod}
+              onChange={handleCHAChange}
+              displayEmpty
+              style={{ height: "2em" }}
+            >
               {Array.from({ length: 9 }, (_, i) => i - 4).map((mod) => (
                 <MenuItem key={mod} value={mod}>
                   {mod >= 0 ? `+${mod}` : mod}
