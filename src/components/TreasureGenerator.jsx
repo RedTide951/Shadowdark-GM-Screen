@@ -13,8 +13,8 @@ const TreasureGenerator = () => {
   const [tenTreasureResult, settenTreasureResult] = useState(null);
 
   const handleMundaneTreasure = () => {
-    const roll1 = Math.ceil(Math.random() * 37);
-    const roll2 = Math.ceil(Math.random() * 20);
+    const roll1 = Math.floor(Math.random() * 37);
+    const roll2 = Math.floor(Math.random() * 20);
 
     const basicItems = [
       //length 37
