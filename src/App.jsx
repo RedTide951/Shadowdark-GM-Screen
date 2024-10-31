@@ -20,6 +20,12 @@ const theme = createTheme({
     allVariants: {
       textAlign: "left",
     },
+    h3: {
+      fontSize: "40px",
+    },
+    h4: {
+      fontSize: "28px",
+    },
   },
   card: {
     p: 10,
@@ -33,7 +39,7 @@ function App() {
       <div className="App">
         <AppBar position="static">
           <Typography
-            variant="h4"
+            variant="h3"
             component="div"
             sx={{
               flexGrow: 1,

@@ -5,10 +5,84 @@ import Grid from "@mui/material/Grid2";
 import Card from "@mui/material/Card";
 
 const TreasureGenerator = () => {
+  const [mundaneTreasureResult, setMundaneTreasureResult] = useState(null);
+  const [uniqueDetail, setUniqueDetail] = useState(null);
   const [zeroTreasureResult, setzeroTreasureResult] = useState(null);
   const [fourTreasureResult, setfourTreasureResult] = useState(null);
   const [sevenTreasureResult, setsevenTreasureResult] = useState(null);
   const [tenTreasureResult, settenTreasureResult] = useState(null);
+
+  const handleMundaneTreasure = () => {
+    const roll1 = Math.ceil(Math.random() * 37);
+    const roll2 = Math.ceil(Math.random() * 20);
+
+    const basicItems = [
+      //length 37
+      "Bastard Sword",
+      "Club",
+      "Crossbow",
+      "Dagger",
+      "Greataxe",
+      "Greatsword",
+      "Javelin",
+      "Longbow",
+      "Longsword",
+      "Mace",
+      "Shortbow",
+      "Shortsword",
+      "Spear",
+      "Staff",
+      "Warhammer",
+      `Arrows (${Math.ceil(Math.random() * 20)})`,
+      "Backpack",
+      "Caltrops",
+      `Coins (${Math.ceil(Math.random() * 100)})`,
+      `Crossbow bolts (${Math.ceil(Math.random() * 20)})`,
+      "Crowbar",
+      "Flask or Bottle",
+      "Flint and Steel",
+      "Gem",
+      "Grappling Hook",
+      `Iron spikes (${Math.ceil(Math.random() * 10)})`,
+      "Lantern",
+      "Mirror",
+      "Oil, flask",
+      "Pole",
+      `Rations (${Math.ceil(Math.random() * 3)})`,
+      "Rope, 60'",
+      "Torch",
+      "Leather armor",
+      "Chainmail",
+      "Plate Mail",
+      "Shield",
+    ];
+
+    const uniqueDetails = [
+      "Forgery",
+      "Misshapen",
+      "Poorly constructed",
+      "Blemished",
+      "Worn smooth",
+      "Sparkling clean",
+      "Bite marks",
+      "Burned",
+      "Dusty",
+      "Caked with dry mud",
+      "Rare artist mark",
+      "Repaired",
+      "Chipped",
+      "Specks of dried blood",
+      "Unusual material",
+      "Fragile",
+      "Rusted/rotted",
+      "Painted upon",
+      "Carved with initials",
+      "Historic/famous",
+    ];
+
+    setMundaneTreasureResult(basicItems[roll1]);
+    setUniqueDetail(uniqueDetails[roll2]);
+  };
 
   const handleZeroThreeTreasure = () => {
     const roll = Math.ceil(Math.random() * 100);
@@ -920,61 +994,71 @@ const TreasureGenerator = () => {
         style={{ height: "100%" }}
       >
         <Grid size={12}>
-          <Typography variant="h4" textAlign="center" className="cardTitle">
+          <Typography variant="h4" className="cardTitle">
             TREASURES
           </Typography>
         </Grid>
-        <Grid size={4}>
+        <Grid size={3}>
+          <Button variant="contained" onClick={handleMundaneTreasure} fullWidth>
+            Basic
+          </Button>
+        </Grid>
+        <Grid size={9}>
+          <Typography className="resultDisplay">
+            {mundaneTreasureResult}, {uniqueDetail}
+          </Typography>
+        </Grid>
+        <Grid size={3}>
           <Button
             variant="contained"
             onClick={handleZeroThreeTreasure}
             fullWidth
           >
-            0-3 Treasures
+            0-3 Level
           </Button>
         </Grid>
-        <Grid size={8}>
-          <Typography className="resultDisplay" variant="result">
+        <Grid size={9}>
+          <Typography className="resultDisplay">
             {zeroTreasureResult
               ? `${zeroTreasureResult.description} (${zeroTreasureResult.value})`
               : ""}
           </Typography>
         </Grid>
-        <Grid size={4}>
+        <Grid size={3}>
           <Button variant="contained" onClick={handleFourSixTreasure} fullWidth>
-            4-6 Treasures
+            4-6 Level
           </Button>
         </Grid>
-        <Grid size={8}>
-          <Typography className="resultDisplay" variant="result">
+        <Grid size={9}>
+          <Typography className="resultDisplay">
             {fourTreasureResult
               ? `${fourTreasureResult.description} (${fourTreasureResult.value})`
               : ""}
           </Typography>
         </Grid>
-        <Grid size={4}>
+        <Grid size={3}>
           <Button
             variant="contained"
             onClick={handleSevenNineTreasure}
             fullWidth
           >
-            7-9 Treasures
+            7-9 Level
           </Button>
         </Grid>
-        <Grid size={8}>
-          <Typography className="resultDisplay" variant="result">
+        <Grid size={9}>
+          <Typography className="resultDisplay">
             {sevenTreasureResult
               ? `${sevenTreasureResult.description} (${sevenTreasureResult.value})`
               : ""}
           </Typography>
         </Grid>
-        <Grid size={4}>
+        <Grid size={3}>
           <Button variant="contained" onClick={handleTenPlusTreasure} fullWidth>
-            10+ Treasures
+            10+ Level
           </Button>
         </Grid>
-        <Grid size={8}>
-          <Typography className="resultDisplay" variant="result">
+        <Grid size={9}>
+          <Typography className="resultDisplay">
             {tenTreasureResult
               ? `${tenTreasureResult.description} (${tenTreasureResult.value})`
               : ""}
