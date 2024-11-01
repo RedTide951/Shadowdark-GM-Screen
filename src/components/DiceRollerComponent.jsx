@@ -1,15 +1,14 @@
 import React from "react";
 import { Card, Typography, Box } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { TextField, Button, List, ListItem } from '@mui/material';
-import { FormatAlignJustify } from "@mui/icons-material";
 
 
 const DiceRollerComponent = () => {
-  const [playerLevel, setPlayerLevel] = useState(null);
   const [input, setInput] = useState('');
   const [rolls, setRolls] = useState([]);
+  const bottomListRef = useRef(null);
 
   const handleInputChange = (event) => {
     setInput(event.target.value);
@@ -37,6 +36,18 @@ const DiceRollerComponent = () => {
     setInput('');
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleRoll();
+    }
+  };
+
+  useEffect(() => {
+    if (bottomListRef.current) {
+      bottomListRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [rolls]); // Triggered whenever rolls update
+
 
   return (
     <Card className="cardClass">
@@ -55,6 +66,7 @@ const DiceRollerComponent = () => {
               {rolls.map((roll, index) => (
                 <ListItem key={index}>{roll}</ListItem>
               ))}
+              <div ref={bottomListRef} />
             </List>
           </Box>
         </Grid>
@@ -63,6 +75,7 @@ const DiceRollerComponent = () => {
             variant="outlined"
             value={input}
             onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
             placeholder="2d6, 3d10, d20 etc..."
             sx={{
               width: "100%",
