@@ -8,6 +8,7 @@ Digital GM screen with random generators and dice roller for hosting Shadowdark 
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
 - [MUI](https://mui.com/) - A popular React UI framework with a comprehensive set of components.
+- [ChatGPT](https://openai.com/chatgpt) - The one and only...
 
 ## Contributing
 
