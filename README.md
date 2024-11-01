@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Shadowdark GM Screen
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+v0.3.3
 
-## Available Scripts
+Digital GM screen with random generators and dice roller for hosting Shadowdark Sessions.
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [MUI](https://mui.com/) - A popular React UI framework with a comprehensive set of components.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contributing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Shadowdark GM Screen is a nonprofit project developed to assist the Shadowdark community. Please message me or email me at oguzhanraifbutuner@gmail.com to contribute.
 
-### `npm test`
+## License
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Shadowdark GM Screen is an independent product published under the Shadowdark RPG Third-Party License and is not affiliated with The Arcane Library, LLC. Shadowdark RPG © 2023 The Arcane Library, LLC.
 
-### `npm run build`
+# Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Encounters Card
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Automated encounter checks based on the Shadowdark RPG book.
+- Reaction and morale checks with adjustable modifiers (Shadowdark RPG, pg. 111, 112, 113).
 
-### `npm run eject`
+## Dice Roller Card
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Supports multiple & custom dice commands.
+- Detailed logging for each command.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## NPC Generator Card
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Generates random NPCs with one click, based on Shadowdark RPG pg 124, 125.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Light Card
 
-## Learn More
+- Start, stop, resettable timer.
+- +5 and -5 increments.
+- Bar depicting time left visually based on a 60-minute mark.
+- Light mishap generator, based on Shadowdark RPG pg. 110.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Known Issues
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Inconsistent card size with generated elements.
+- Colliding button borders in the timer with smaller resolutions.
+- Colliding random NPC outputs in small resolutions.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Upcoming
 
-### Making a Progressive Web App
+## Dice Roller
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- More commands and descriptions for using those commands in the dice roller.
 
-### Advanced Configuration
+## Plot Generator
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Generator from SD rumors table.
 
-### Deployment
+## Light
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Alarm sound when the timer ends.
 
-### `npm run build` fails to minify
+## Other
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Draggable cards to customize screen order.
+- More card components to add/remove for customization.
+- Initiative tracker list with draggable/editable list items.
