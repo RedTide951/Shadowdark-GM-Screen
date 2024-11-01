@@ -10,6 +10,8 @@ import TrapGenerator from "./TrapGenerator";
 import TreasureGenerator from "./TreasureGenerator";
 import MonsterGenerator from "./MonsterGenerator";
 import InitiativeList from "./InitiativeList";
+import PlotGenerator from "./PlotGenerator";
+import DiceRollerComponent from "./DiceRollerComponent";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -26,22 +28,23 @@ export default function BasicGrid() {
   return (
     <Box sx={{ flexGrow: 1 }} m={2}>
       <Grid container spacing={2} rowSpacing={4}>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           <EncounterComponent />
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           <NPCGenerator />
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           <TimerComponent />
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           <TreasureGenerator />
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <MonsterGenerator />
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+          <PlotGenerator />
         </Grid>
-        <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+        <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+          <DiceRollerComponent />
         </Grid>
       </Grid>
     </Box>

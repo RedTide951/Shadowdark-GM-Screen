@@ -985,7 +985,8 @@ const TreasureGenerator = () => {
   };
 
   return (
-    <Card className="cardClass">
+    <Card className="cardClass"
+      justifyContent="space-between">
       <Grid
         container
         spacing={1}
