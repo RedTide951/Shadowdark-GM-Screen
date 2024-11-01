@@ -10,8 +10,6 @@ import TrapGenerator from "./TrapGenerator";
 import TreasureGenerator from "./TreasureGenerator";
 import MonsterGenerator from "./MonsterGenerator";
 import InitiativeList from "./InitiativeList";
-import { Draggable } from "react-beautiful-dnd";
-import DraggableList from "./DraggableList";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -44,7 +42,6 @@ export default function BasicGrid() {
           <MonsterGenerator />
         </Grid>
         <Grid size={{ xs: 12, sm: 6, md: 4 }}>
-          <DraggableList />
         </Grid>
       </Grid>
     </Box>
