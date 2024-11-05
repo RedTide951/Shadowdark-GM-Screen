@@ -9,9 +9,9 @@ import TimerComponent from "./TimerComponent";
 import TrapGenerator from "./TrapGenerator";
 import TreasureGenerator from "./TreasureGenerator";
 import MonsterGenerator from "./MonsterGenerator";
-import InitiativeList from "./InitiativeList";
 import PlotGenerator from "./PlotGenerator";
 import DiceRollerComponent from "./DiceRollerComponent";
+import InitiativeTracker from "./InitiativeTracker";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#fff",
@@ -41,7 +41,7 @@ export default function BasicGrid() {
           <TreasureGenerator />
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 4 }}>
-          <PlotGenerator />
+          <InitiativeTracker />
         </Grid>
         <Grid size={{ xs: 12, md: 6, lg: 4 }}>
           <DiceRollerComponent />
